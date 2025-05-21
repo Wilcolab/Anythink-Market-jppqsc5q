@@ -30,6 +30,7 @@ export const RoutersTableHead: React.FC<RoutersTableHeadProps> = ({
           active={sortField === sortKey}
           direction={sortField === sortKey ? sortDirection : "asc"}
           onClick={() => handleSort(sortKey)}
+          hideSortIcon={false}
         >
           {label}
         </TableSortLabel>
@@ -41,7 +42,9 @@ export const RoutersTableHead: React.FC<RoutersTableHeadProps> = ({
 
   return (
     <TableHead>
-      <TableRow>{renderHeadCells}</TableRow>
+      <TableRow sx={{ display: "table", width: "100%", tableLayout: "fixed" }}>
+        {renderHeadCells}
+      </TableRow>
     </TableHead>
   );
 };

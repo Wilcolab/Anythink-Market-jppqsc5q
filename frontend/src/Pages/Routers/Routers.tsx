@@ -2,7 +2,7 @@ import { Box, Typography, Alert } from "@mui/material";
 import { useRouterList } from "../../hooks/useRoutersList";
 import { useMemo, useState } from "react";
 import { useSortRouters } from "../../hooks/useSortRouters";
-import { RoutersFilter } from "../../Components/RoutersTable/RoutersFilter/RoutersFilter";
+import { RoutersFilter } from "../../Components/RoutersTable/RoutersPageFilter/RoutersPageFilter";
 import { RoutersTable } from "../../Components/RoutersTable/RoutersTable";
 import { useRouterDetailsModal } from "../../hooks/useRouterDetailsModal";
 

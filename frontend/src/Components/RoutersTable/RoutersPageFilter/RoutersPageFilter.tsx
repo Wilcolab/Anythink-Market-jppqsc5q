@@ -1,4 +1,5 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { ROUTER_TYPES } from "../../../types";
 
 interface RoutersFilterProps {
   filterType: string;
@@ -9,6 +10,11 @@ export const RoutersFilter: React.FC<RoutersFilterProps> = ({
   filterType,
   setFilterType,
 }) => {
+  const renderFilterOptions = ROUTER_TYPES.map((value) => (
+    <MenuItem value={value} sx={{ textTransform: "capitalize" }}>
+      {value}
+    </MenuItem>
+  ));
   return (
     <FormControl sx={{ mb: 3, minWidth: 200 }}>
       <InputLabel>Filter by Type</InputLabel>
@@ -18,9 +24,7 @@ export const RoutersFilter: React.FC<RoutersFilterProps> = ({
         label="Filter by Type"
       >
         <MenuItem value="all">All</MenuItem>
-        <MenuItem value="enterprise">Enterprise</MenuItem>
-        <MenuItem value="home">Home</MenuItem>
-        <MenuItem value="wifi">WiFi</MenuItem>
+        {renderFilterOptions}
       </Select>
     </FormControl>
   );

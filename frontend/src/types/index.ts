@@ -1,5 +1,5 @@
-export type RouterType = "enterprise" | "home" | "wifi";
-
+export const ROUTER_TYPES = ["enterprise", "home", "wifi"] as const;
+export type RouterType = (typeof ROUTER_TYPES)[number];
 export interface Coordinates {
   latitude: number;
   longitude: number;
