@@ -4,11 +4,13 @@ import { useMemo, useState } from "react";
 import { useSortRouters } from "../../hooks/useSortRouters";
 import { RoutersFilter } from "../../Components/RoutersTable/RoutersFilter/RoutersFilter";
 import { RoutersTable } from "../../Components/RoutersTable/RoutersTable";
+import { useRouterDetailsModal } from "../../hooks/useRouterDetailsModal";
 
 export const Routers = () => {
   const { error, isLoading, routersData } = useRouterList();
   const [filterType, setFilterType] = useState<string>("all");
   const { handleSort, sortDirection, sortField } = useSortRouters();
+  const { handleRowClick, renderRouterDetailsModal } = useRouterDetailsModal();
 
   const filteredAndSortedRouters = useMemo(() => {
     let result = [...routersData];
@@ -42,11 +44,13 @@ export const Routers = () => {
       )}
       <RoutersTable
         filteredAndSortedRouters={filteredAndSortedRouters}
-        handleSort={handleSort}
         isLoading={isLoading}
         sortDirection={sortDirection}
         sortField={sortField}
+        handleSort={handleSort}
+        onRowClick={handleRowClick}
       />
+      {renderRouterDetailsModal}
     </Box>
   );
 };
