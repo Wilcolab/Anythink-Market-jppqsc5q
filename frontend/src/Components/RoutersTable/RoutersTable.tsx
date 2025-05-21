@@ -1,14 +1,7 @@
-import {
-  Skeleton,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-  TableSortLabel,
-} from "@mui/material";
+import { Skeleton, Table, TableBody, TableCell, TableRow } from "@mui/material";
 import dayjs from "dayjs";
 import { RouterItem, SortDirection, SortField } from "../../types";
+import { RoutersTableHead } from "./RoutersTableHead/RoutersTableHead";
 
 interface RoutersTableProps {
   isLoading: boolean;
@@ -33,29 +26,11 @@ export const RoutersTable: React.FC<RoutersTableProps> = ({
         ))
       ) : (
         <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>
-                <TableSortLabel
-                  active={sortField === "name"}
-                  direction={sortField === "name" ? sortDirection : "asc"}
-                  onClick={() => handleSort("name")}
-                >
-                  Name
-                </TableSortLabel>
-              </TableCell>
-              <TableCell>Type</TableCell>
-              <TableCell>
-                <TableSortLabel
-                  active={sortField === "updatedAt"}
-                  direction={sortField === "updatedAt" ? sortDirection : "asc"}
-                  onClick={() => handleSort("updatedAt")}
-                >
-                  Last Updated
-                </TableSortLabel>
-              </TableCell>
-            </TableRow>
-          </TableHead>
+          <RoutersTableHead
+            handleSort={handleSort}
+            sortDirection={sortDirection}
+            sortField={sortField}
+          />
           <TableBody>
             {filteredAndSortedRouters.map((router) => (
               <TableRow key={router.id}>
