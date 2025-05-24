@@ -22,6 +22,7 @@ export const RoutersFilter: React.FC<RoutersFilterProps> = ({
         value={filterType}
         onChange={(e) => setFilterType(e.target.value)}
         label="Filter by Type"
+        sx={{ textTransform: "capitalize" }}
       >
         <MenuItem value="all">All</MenuItem>
         {renderFilterOptions}

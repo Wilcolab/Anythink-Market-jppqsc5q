@@ -33,7 +33,7 @@ export const RoutersTableRow: React.FC<RoutersTableRowProps> = ({
         <Typography>{router.name}</Typography>
       </Box>
       <Box sx={{ flex: 1 }}>
-        <Typography>{router.type}</Typography>
+        <Typography sx={{textTransform: 'capitalize'}}>{router.type}</Typography>
       </Box>
       <Box sx={{ flex: 1 }}>
         <Typography>
