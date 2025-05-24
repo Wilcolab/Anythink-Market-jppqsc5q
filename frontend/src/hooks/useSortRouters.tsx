@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SortDirection, SortField } from "../types";
+import { SortDirection, SortField } from "../types/routers";
 
 export const useSortRouters = () => {
   const [sortField, setSortField] = useState<SortField>("updatedAt");

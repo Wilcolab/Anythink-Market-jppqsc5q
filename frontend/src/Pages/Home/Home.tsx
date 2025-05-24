@@ -1,18 +1,22 @@
+import { Box } from "@mui/material";
+
 export const Home = () => {
   return (
-    <main className="App-main">
-      <div className="container">
-        <div className="placeholder-container">
-          <div className="placeholder-icon">🚀</div>
-          <h2 className="placeholder-title">Coming Soon</h2>
-          <div className="construction-line"></div>
-          <p className="placeholder-text">
+    <Box component="main" className="App-main">
+      <Box className="container">
+        <Box className="placeholder-container" sx={{ textAlign: "center" }}>
+          <Box className="placeholder-icon">🚀</Box>
+          <Box component="h2" className="placeholder-title">
+            Coming Soon
+          </Box>
+          <Box className="construction-line" />
+          <Box component="p" className="placeholder-text">
             This homepage is currently under construction. In the meantime,
             please use the navigation menu to access other parts of the
             DriveNets Dashboard.
-          </p>
-        </div>
-      </div>
-    </main>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };

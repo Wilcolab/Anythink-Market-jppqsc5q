@@ -1,4 +1,4 @@
-import { WifiRouter } from "../../../types";
+import { WifiRouter } from "../../../types/routers";
 import { Stack, Typography } from "@mui/material";
 
 export const WifiRouterDetails = ({ router }: { router: WifiRouter }) => (

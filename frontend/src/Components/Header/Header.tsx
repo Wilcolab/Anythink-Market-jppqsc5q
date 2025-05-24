@@ -1,5 +1,5 @@
 import MenuIcon from "@mui/icons-material/Menu";
-import IconButton from "@mui/material/IconButton";
+import { Box, Typography, IconButton } from "@mui/material";
 
 type HeaderProps = {
   onMenuClick: () => void;
@@ -7,7 +7,7 @@ type HeaderProps = {
 
 export const Header = ({ onMenuClick }: HeaderProps) => {
   return (
-    <header className="App-header">
+    <Box component="header" className="App-header">
       <IconButton
         onClick={onMenuClick}
         edge="start"
@@ -15,12 +15,20 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
       >
         <MenuIcon sx={{ color: "var(--dn-blue)" }} />
       </IconButton>
-      <div
-        className="container"
-        style={{ display: "flex", alignItems: "center" }}
-      >
-        <h1 className="App-title">DriveNets Dashboard</h1>
-      </div>
-    </header>
+
+      <Box className="container" sx={{ display: "flex", alignItems: "center" }}>
+        <Typography
+          component="h1"
+          sx={{
+            color: "#0047AB",
+            fontSize: "1.5rem",
+            fontWeight: 600,
+            margin: 0,
+          }}
+        >
+          DriveNets Dashboard
+        </Typography>
+      </Box>
+    </Box>
   );
 };

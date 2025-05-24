@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { RoutersService } from "../services/routers.service";
 import { AxiosError } from "axios";
-import { RouterItem } from "../types";
+import { RouterItem } from "../types/routers";
 
 export const useRouterList = () => {
   const [routersData, setRoutersData] = useState<RouterItem[]>([]);

@@ -12,7 +12,7 @@ export const MainLayout = () => {
   return (
     <div className="App">
       <Header onMenuClick={toggleDrawer} />
-      <Sidebar open={drawerOpen} onClose={toggleDrawer} />
+      <Sidebar open={drawerOpen} toggleDrawer={toggleDrawer} />
       <main className="App-main">
         <div className="container">
           <Outlet />

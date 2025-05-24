@@ -10,10 +10,10 @@ import { routes } from "../../routes/constants";
 
 type Props = {
   open: boolean;
-  onClose: () => void;
+  toggleDrawer: () => void;
 };
 
-export const Sidebar = ({ open, onClose }: Props) => {
+export const Sidebar = ({ open, toggleDrawer }: Props) => {
   const navigate = useNavigate();
 
   const renderRoutes = routes
@@ -23,7 +23,7 @@ export const Sidebar = ({ open, onClose }: Props) => {
         <ListItemButton
           onClick={() => {
             navigate(path);
-            onClose();
+            toggleDrawer();
           }}
         >
           <ListItemText primary={label} />
@@ -32,7 +32,7 @@ export const Sidebar = ({ open, onClose }: Props) => {
     ));
 
   return (
-    <Drawer anchor="left" open={open} onClose={onClose}>
+    <Drawer anchor="left" open={open} onClose={toggleDrawer}>
       <List sx={{ width: 250 }}>{renderRoutes}</List>
     </Drawer>
   );

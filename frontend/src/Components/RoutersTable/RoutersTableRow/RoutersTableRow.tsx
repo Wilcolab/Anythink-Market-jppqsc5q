@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import dayjs from "dayjs";
-import { RouterItem } from "../../../types";
+import { RouterItem } from "../../../types/routers";
 
 interface RoutersTableRowProps {
   router: RouterItem;
@@ -33,7 +33,7 @@ export const RoutersTableRow: React.FC<RoutersTableRowProps> = ({
         <Typography>{router.name}</Typography>
       </Box>
       <Box sx={{ flex: 1 }}>
-        <Typography>{router.type}</Typography>
+        <Typography sx={{textTransform: 'capitalize'}}>{router.type}</Typography>
       </Box>
       <Box sx={{ flex: 1 }}>
         <Typography>

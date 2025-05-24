@@ -1,5 +1,5 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import { ROUTER_TYPES } from "../../../types";
+import { ROUTER_TYPES } from "../../../types/routers";
 
 interface RoutersFilterProps {
   filterType: string;
@@ -22,6 +22,7 @@ export const RoutersFilter: React.FC<RoutersFilterProps> = ({
         value={filterType}
         onChange={(e) => setFilterType(e.target.value)}
         label="Filter by Type"
+        sx={{ textTransform: "capitalize" }}
       >
         <MenuItem value="all">All</MenuItem>
         {renderFilterOptions}

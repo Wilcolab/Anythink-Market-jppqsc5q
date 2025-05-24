@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { RouterItem } from "../types";
-import { RouterDetailsModal } from "../Components/RouterDetailsModal/RouterDetailsModal";
+import { RouterItem } from "../types/routers";
+import { RouterDetailsModal } from "../Components/RoutersDetailsModal/RouterDetailsModal";
 
-export const useRouterDetailsModal = () => {
+export const useRoutersDetailsModal = () => {
   const [selectedRouter, setSelectedRouter] = useState<RouterItem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 

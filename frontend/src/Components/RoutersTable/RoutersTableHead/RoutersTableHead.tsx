@@ -1,43 +1,17 @@
-import { TableCell, TableHead, TableRow, TableSortLabel } from "@mui/material";
-import { SortDirection, SortField } from "../../../types";
+import { TableHead, TableRow } from "@mui/material";
+import { SortDirection, SortField } from "../../../types/routers";
+import { HEAD_CELLS } from "./constants";
+import { RoutersTableHeadCell } from "./RoutersTableHeadCell/RoutersTableHeadCell";
 
-interface RoutersTableHeadProps {
+export interface RoutersTableHeadProps {
   sortField: SortField;
   handleSort: (field: SortField) => void;
   sortDirection: SortDirection;
 }
 
-interface HeadCell {
-  label: string;
-  sortKey?: SortField;
-}
-
-const HEAD_CELLS: HeadCell[] = [
-  { label: "Name", sortKey: "name" },
-  { label: "Type" },
-  { label: "Last Updated", sortKey: "updatedAt" },
-];
-
-export const RoutersTableHead: React.FC<RoutersTableHeadProps> = ({
-  handleSort,
-  sortField,
-  sortDirection,
-}) => {
+export const RoutersTableHead: React.FC<RoutersTableHeadProps> = (props) => {
   const renderHeadCells = HEAD_CELLS.map(({ label, sortKey }) => (
-    <TableCell key={label}>
-      {sortKey ? (
-        <TableSortLabel
-          active={sortField === sortKey}
-          direction={sortField === sortKey ? sortDirection : "asc"}
-          onClick={() => handleSort(sortKey)}
-          hideSortIcon={false}
-        >
-          {label}
-        </TableSortLabel>
-      ) : (
-        label
-      )}
-    </TableCell>
+    <RoutersTableHeadCell label={label} sortKey={sortKey} {...props} />
   ));
 
   return (
