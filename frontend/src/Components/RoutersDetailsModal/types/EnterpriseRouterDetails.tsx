@@ -1,4 +1,4 @@
-import { EnterpriseRouter } from "../../../types";
+import { EnterpriseRouter } from "../../../types/routers";
 import { Stack, Typography } from "@mui/material";
 
 export const EnterpriseRouterDetails = ({

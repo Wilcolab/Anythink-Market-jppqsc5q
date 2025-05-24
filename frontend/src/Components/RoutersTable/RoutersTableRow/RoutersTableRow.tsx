@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import dayjs from "dayjs";
-import { RouterItem } from "../../../types";
+import { RouterItem } from "../../../types/routers";
 
 interface RoutersTableRowProps {
   router: RouterItem;

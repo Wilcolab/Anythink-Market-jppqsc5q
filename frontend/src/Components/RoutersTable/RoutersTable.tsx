@@ -2,7 +2,7 @@ import { Paper, Table, TableContainer, Box } from "@mui/material";
 import { FixedSizeList, ListChildComponentProps } from "react-window";
 import AutoSizer, { Size } from "react-virtualized-auto-sizer";
 import { RoutersTableHead } from "./RoutersTableHead/RoutersTableHead";
-import { RouterItem, SortDirection, SortField } from "../../types";
+import { RouterItem, SortDirection, SortField } from "../../types/routers";
 import { RoutersTableLoader } from "./RoutersTableLoader/RoutersTableLoader";
 import { RoutersTableRow } from "./RoutersTableRow/RoutersTableRow";
 
@@ -15,7 +15,8 @@ interface RoutersTableProps {
   onRowClick: (router: RouterItem) => void;
 }
 
-const UPPER_PAGE_HEIGHT = 285;
+const UPPER_PAGE_HEIGHT = 275;
+
 export const RoutersTable: React.FC<RoutersTableProps> = ({
   filteredAndSortedRouters,
   isLoading,
@@ -25,6 +26,7 @@ export const RoutersTable: React.FC<RoutersTableProps> = ({
   onRowClick,
 }) => {
   if (isLoading) return <RoutersTableLoader />;
+  const { length: itemCount } = filteredAndSortedRouters;
 
   const Row = ({ index, style }: ListChildComponentProps) => {
     const router = filteredAndSortedRouters[index];
@@ -62,7 +64,7 @@ export const RoutersTable: React.FC<RoutersTableProps> = ({
             <FixedSizeList
               height={height}
               width={width}
-              itemCount={filteredAndSortedRouters.length}
+              itemCount={itemCount}
               itemSize={60}
               overscanCount={5}
             >

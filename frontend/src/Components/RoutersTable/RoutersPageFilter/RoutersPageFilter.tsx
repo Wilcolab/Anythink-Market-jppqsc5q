@@ -1,5 +1,5 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import { ROUTER_TYPES } from "../../../types";
+import { ROUTER_TYPES } from "../../../types/routers";
 
 interface RoutersFilterProps {
   filterType: string;

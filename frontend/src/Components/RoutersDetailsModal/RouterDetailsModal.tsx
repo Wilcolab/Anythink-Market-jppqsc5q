@@ -8,7 +8,7 @@ import {
   Typography,
   Divider,
 } from "@mui/material";
-import { RouterItem } from "../../types";
+import { RouterItem } from "../../types/routers";
 import { EnterpriseRouterDetails } from "./types/EnterpriseRouterDetails";
 import { HomeRouterDetails } from "./types/HomeRouterDetails";
 import { WifiRouterDetails } from "./types/WifiRouterDetails";
